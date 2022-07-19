@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# City Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**: Hayden Cleaver <br>
+**Version**: 1.2.0
+<!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
-## Available Scripts
+## Overview
+This application allows users to search a city and retrieve the latitude/longitude of the city as well as a map of the city center.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+1. Install React on local computer and create repository.
+2. Install React-Boostrap and Axios on local repository.
+3. Create LocationIQ account and retrieve API key.
+4. Create `.env` file in root folder of repo.
+5. Add API key to `.env` file in following format:
+    * `REACT_APP_CITY_KEY=<YOUR KEY>`
+    * ensure there are no spaces
+6. Add `.env` to `.gitignore` file.
+7. `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Application utilizes React, React-Bootstrap and Axios libraries, and LocationIQ API for map data.
 
-### `npm test`
+## Change Log
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+07/19/2022 10:30pm - Application supports search functionality and renders lat/long.
 
-### `npm run build`
+07/20/2022 12:00am - Map image of area now added to data rendered.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+07/20/2022 12:30am - Error alert is now displayed if no input is entered into search field.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-### `npm run eject`
+## Credit and Collaborations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Resources:
+* [NPM Axios](https://www.npmjs.com/package/axios#handling-errors)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [React-Bootstrap](https://react-bootstrap.github.io/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* [LocationIQ](https://locationiq.com/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Credit: <br>
+Thanks to DAY1 partner [Joshua Frazer](https://github.com/Frazmatic) for assisting me with the error data feature. <br>
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## Learn More
+## Feature #1: Search Locations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Estimate of time needed to complete: 1 hr
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start time: 8:00pm
 
-### Code Splitting
+Finish time: 10:30pm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Actual time needed to complete: 2.5 hrs
 
-### Analyzing the Bundle Size
+## Feature #2: Map
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Estimate of time needed to complete: 2 hrs
 
-### Making a Progressive Web App
+Start time: 10:45 pm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Finish time: 12 am
 
-### Advanced Configuration
+Actual time needed to complete: 1.25 hrs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Feature #3: Error Alert
 
-### Deployment
+Estimate of time needed to complete: 1 hr
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Start time: 12 am
 
-### `npm run build` fails to minify
+Finish time: 12:30 am
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Actual time needed to complete: 30 minutes
