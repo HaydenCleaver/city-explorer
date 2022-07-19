@@ -21,21 +21,21 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## Feature #1: 
+## Feature #1: Search Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hr
 
-Start time: _____
+Start time: 8:00pm
 
-Finish time: _____
+Finish time: 10:30pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2.5 hrs
 
-## Feature #2: 
+## Feature #2: Map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hrs
 
-Start time: _____
+Start time: 10:45
 
 Finish time: _____
 
