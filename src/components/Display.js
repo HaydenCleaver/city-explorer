@@ -8,6 +8,7 @@ class Display extends Component{
     render(){
         return(
             <Card>
+                <Card.Img variant='top' src={this.props.mapImage}/>
                 <Card.Header className ="text-white bg-dark">{this.props.cityName}</Card.Header>
                 <ListGroup variant = 'flush'>
                     <ListGroupItem>Latitude: {this.props.lat}</ListGroupItem>
