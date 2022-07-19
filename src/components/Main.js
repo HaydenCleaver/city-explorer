@@ -1,9 +1,11 @@
 import {Component} from 'react';
 import Search from './Search';
 import Display from './Display';
+import axios from 'axios';
 
 import { Container } from 'react-bootstrap';
-import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
+
 
 class Main extends Component{
     constructor(props){
@@ -14,6 +16,8 @@ class Main extends Component{
             latitude: '',
             longitude: '',
             map: '',
+            errorData: '',
+            alertStatus: false,
         }
 
     }
@@ -33,12 +37,24 @@ class Main extends Component{
             `,
             });
         })
+        .catch((error) => {
+            if (error.response){
+                let message = `${error.response.data.error}. ${error.message} ${error.code}.`;
+                this.setState({alertStatus: true, errorData: message})
+            }
+        })
     }
     
     render(){
         return(
             <Container style = {{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
                 <Search getLocationData = {this.getLocationData} />
+                <Alert show = {this.state.alertStatus} variant = 'danger' onClose={()=> this.setState({showAlert: false})} dismissible>
+                    <Alert.Heading>
+                        Error!
+                    </Alert.Heading>
+                    {this.state.errorData}
+                </Alert>
                 <Display 
                 cityName = {this.state.cityName} 
                 lat = {this.state.latitude} 
