@@ -29,7 +29,7 @@ class Main extends Component{
           this.setState({cityName: data.display_name, 
             latitude: data.lat, 
             longitude: data.lon,
-            map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${data.lat},${data.lon}&zoom=11
+            map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${data.lat},${data.lon}&zoom=12.2
             `,
             });
         })
@@ -37,7 +37,7 @@ class Main extends Component{
     
     render(){
         return(
-            <Container>
+            <Container style = {{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
                 <Search getLocationData = {this.getLocationData} />
                 <Display 
                 cityName = {this.state.cityName} 

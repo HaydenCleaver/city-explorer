@@ -7,7 +7,7 @@ class Display extends Component{
 
     render(){
         return(
-            <Card>
+            <Card style = {{alignContent: 'center', width : "50%", marginTop:'5px'} }>
                 <Card.Img variant='top' src={this.props.mapImage}/>
                 <Card.Header className ="text-white bg-dark">{this.props.cityName}</Card.Header>
                 <ListGroup variant = 'flush'>

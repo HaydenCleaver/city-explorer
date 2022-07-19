@@ -1,5 +1,8 @@
 import {Component} from 'react';
-import Container from 'react-bootstrap/Container';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -25,13 +28,17 @@ class Search extends Component{
 
     render(){
         return(
-            <Container>
-            <Form onSubmit = {this.handleSubmit}>
-              <Form.Label>Enter City Name</Form.Label>
-              <Form.Control type = 'text' onChange = {this.handleSearch}/>
+            <Form onSubmit = {this.handleSubmit} style = {{width: "50%"}}>
+                <Row>
+                    <Col sm={3} style={{textAlign: 'right'}}>
+                        <Form.Label style = {{fontSize: '110%', fontWeight: 'bold'}}>Enter City Name:</Form.Label>
+                    </Col>
+                    <Col>
+                    <Form.Control type = 'text' onChange = {this.handleSearch} style ={{marginBottom: "5px"}}/>
+                    </Col>
+                </Row>
               <Button type = 'submit'>Explore!</Button>
             </Form>
-          </Container>
         )
     }
 }
