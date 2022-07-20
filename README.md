@@ -23,6 +23,8 @@ This application allows users to search a city and retrieve the latitude/longitu
 
 Application utilizes React, React-Bootstrap and Axios libraries, and LocationIQ API for map data.
 
+![Day 1: Front-End Whiteboard](/img/Lab6Board.png)
+
 ## Change Log
 
 07/19/2022 10:30pm - Application supports search functionality and renders lat/long.

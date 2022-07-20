@@ -16,6 +16,7 @@ class Main extends Component{
             latitude: '',
             longitude: '',
             map: '',
+            weather: '',
             errorData: '',
             alertStatus: false,
         }
@@ -30,7 +31,8 @@ class Main extends Component{
           let data = response.data[0];
           console.log(data.display_name, data.lat, data.lon);
 
-          this.setState({cityName: data.display_name, 
+          this.setState({
+            cityName: data.display_name, 
             latitude: data.lat, 
             longitude: data.lon,
             map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${data.lat},${data.lon}&zoom=12.2
@@ -45,10 +47,23 @@ class Main extends Component{
         })
     }
     
+    getWeather = async () => {
+        let url = `http://localhost:3000/weather?city_name=${this.state.cityName}&lat=${this.state.lat}&lon=${this.state.lon}`;
+
+        try {
+            let response = await axios.get(url);
+            this.setState({
+                weather: response.data,
+            })
+        } catch (e) {
+            this.setState({error: e});
+        }
+    }
+
     render(){
         return(
             <Container style = {{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
-                <Search getLocationData = {this.getLocationData} />
+                <Search getLocationData = {this.getLocationData} getWeather = {this.getWeather} />
                 <Alert show = {this.state.alertStatus} variant = 'danger' onClose={()=> this.setState({showAlert: false})} dismissible>
                     <Alert.Heading>
                         Error!
