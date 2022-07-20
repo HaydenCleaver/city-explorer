@@ -19,6 +19,7 @@ class Search extends Component{
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.getLocationData(this.state.query);
+        this.props.getWeather();
       }
       
       handleSearch = (e) => {
