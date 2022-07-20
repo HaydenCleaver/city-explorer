@@ -27,12 +27,13 @@ Application utilizes React, React-Bootstrap and Axios libraries, and LocationIQ 
 
 ## Change Log
 
-07/19/2022 10:30pm - Application supports search functionality and renders lat/long.
+07/18/2022 10:30pm - Application supports search functionality and renders lat/long.
 
-07/20/2022 12:00am - Map image of area now added to data rendered.
+07/19/2022 12:00am - Map image of area now added to data rendered.
 
-07/20/2022 12:30am - Error alert is now displayed if no input is entered into search field.
+07/19/2022 12:30am - Error alert is now displayed if no input is entered into search field.
 
+07/20/2022 5:50pm - Weather forecast data is displayed upon searching the correct city (limited to server json data).
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
@@ -79,3 +80,13 @@ Start time: 12 am
 Finish time: 12:30 am
 
 Actual time needed to complete: 30 minutes
+
+## Feature #4: Weather Forecast Data from Server
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 5:00 pm
+
+Finish time: 5:50 pm
+
+Actual time needed to complete: 50 min

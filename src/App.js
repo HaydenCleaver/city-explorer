@@ -10,7 +10,7 @@ render(){
   return (
     <div className='App'>
       <h1 style = {{marginBottom: '100px'}}>City Explorer</h1>
-      <Main/>
+      <Main className ='Main'/>
     </div>
   );
   }

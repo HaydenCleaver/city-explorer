@@ -14,6 +14,15 @@ class Display extends Component{
                     <ListGroupItem>Latitude: {this.props.lat}</ListGroupItem>
                     <ListGroupItem>Longitude: {this.props.lon}</ListGroupItem>
                 </ListGroup>
+                <ListGroup horizontal className ="text-white bg-dark">
+                    <h3>Weather Forecast:</h3>
+                    {this.props.weather.map(obj =>
+                        <ListGroup.Item >
+                            <p>Date: {obj.date}</p>
+                            <p>{obj.description}</p>
+                        </ListGroup.Item>
+                        )}
+                </ListGroup>
             </Card>
         )
     }

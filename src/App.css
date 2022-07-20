@@ -1,7 +1,12 @@
-* {
+ .Main{
   background-color: grey;
 }
 
 .App {
   text-align: center;
+  background-color: grey
+}
+
+#Root {
+  background-color: grey;
 }
