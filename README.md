@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Hayden Cleaver <br>
-**Version**: 1.2.0
+**Version**: 1.3.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -23,6 +23,7 @@ This application allows users to search a city and retrieve the latitude/longitu
 
 Application utilizes React, React-Bootstrap and Axios libraries, and LocationIQ API for map data.
 
+![Day 3: Expanded API Whiteboard](/img/Lab8.png)
 ![Day 1: Front-End Whiteboard](/img/Lab6Board.png)
 
 ## Change Log
