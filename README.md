@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Hayden Cleaver <br>
-**Version**: 1.3.0
+**Version**: 1.4.6
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -38,6 +38,9 @@ Application utilizes React, React-Bootstrap and Axios libraries, and LocationIQ 
 07/19/2022 12:30am - Error alert is now displayed if no input is entered into search field.
 
 07/20/2022 5:50pm - Weather forecast data is displayed upon searching the correct city (limited to server json data).
+
+07/25/2022 1:30am - Movie request feature which pulls data and renders it from TMDB API has been added.
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
@@ -94,3 +97,15 @@ Start time: 5:00 pm
 Finish time: 5:50 pm
 
 Actual time needed to complete: 50 min
+
+## Feature #5: Movie Request and Render
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 12:00am
+
+Finish time: 1:30am
+
+Actual time needed to complete: 1.5 hrs
+
+
