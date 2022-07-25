@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert';
 
+const herokuUrl = `https://scintillating-city-explorer.herokuapp.com`;
 
 class Main extends Component{
     constructor(props){
@@ -13,10 +14,11 @@ class Main extends Component{
 
         this.state = {
             cityName: '',
-            latitude: '',
-            longitude: '',
+            lat: '',
+            lon: '',
             map: '',
             weather: [],
+            movies: [],
             errorData: {},
             alertStatus: false,
         }
@@ -33,11 +35,14 @@ class Main extends Component{
 
           this.setState({
             cityName: data.display_name.split(',')[0], 
-            latitude: data.lat, 
-            longitude: data.lon,
+            lat: data.lat, 
+            lon: data.lon,
             map: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${data.lat},${data.lon}&zoom=12.2
-            `,
-            }, this.getWeather);
+            `
+            })
+             
+            this.getWeather(query, data.lat, data.lon);
+            this.getMovies(query);
         })
         .catch((error) => {
             if (error.response){
@@ -47,20 +52,36 @@ class Main extends Component{
         })
     }
     
-    getWeather = async () => {
-        console.log(this.state.latitude, this.state.longitude, this.state.cityName);
-        let url = `https://scintillating-city-explorer.herokuapp.com/weather?city_name=${this.state.cityName}&lat=${this.state.latitude}&lon=${this.state.longitude}`;
+    getWeather = (cityName, lat, lon) => {
+        console.log(this.state.lat, this.state.lon, this.state.cityName);
+        let url = `${herokuUrl}/weather?city_name=${cityName}&lat=${lat}&lon=${lon}`;
 
-        try {
-            let response = await axios.get(url);
+        axios.get(url).then(res => {
             this.setState({
-                weather: response.data,
+                weather: res.data,
             });
             console.log(this.state.weather);
-        } catch (error) {
-            let message = `${error.response.data.error}. ${error.message} ${error.code}.`;
-            this.setState({alertStatus: true, errorData: message})
-        }
+        })
+            .catch ((error) => {
+                let message = `${error.response.data.error}. ${error.message} ${error.code}.`;
+                this.setState({alertStatus: true, errorData: message})
+        });
+    }
+
+    getMovies = (query) =>  {
+        console.log('hey');
+        let url = `${herokuUrl}/movies?query=${query}`;
+        console.log(url);
+        axios.get(url).then(res => {
+            this.setState({
+                movies: res.data,
+            });
+            console.log(this.state.movies);
+        })
+            .catch((error) => {
+                let message = `${error.response.data.error}. ${error.message} ${error.code}.`;
+                this.setState({alertStatus: true, errorData: message})
+        });
     }
 
     render(){
@@ -75,10 +96,11 @@ class Main extends Component{
                 </Alert>
                 <Display 
                 cityName = {this.state.cityName} 
-                lat = {this.state.latitude} 
-                lon = {this.state.longitude}
+                lat = {this.state.lat} 
+                lon = {this.state.lon}
                 mapImage = {this.state.map}
                 weather = {this.state.weather}
+                movies = {this.state.movies}
                 />
             </Container>
         )
