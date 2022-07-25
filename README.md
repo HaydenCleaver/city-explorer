@@ -108,4 +108,12 @@ Finish time: 1:30am
 
 Actual time needed to complete: 1.5 hrs
 
+## Refactor/Modularize
 
+Estimate of time needed to complete: 45 minutes
+
+Start time: 6:00pm
+
+Finish time: 7:00pm
+
+Actual time needed to complete: 1 hr

@@ -69,7 +69,6 @@ class Main extends Component{
     }
 
     getMovies = (query) =>  {
-        console.log('hey');
         let url = `${herokuUrl}/movies?query=${query}`;
         console.log(url);
         axios.get(url).then(res => {
